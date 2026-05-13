@@ -57,6 +57,8 @@ def index():
         selected = request.form.get('attraction')
     return render_template('index.html', attractions=attractions, selected=selected)
 
-# Vercel 部署需要的入口点
+# Vercel 部署需要的 WSGI 应用对象
+application = app.wsgi_app
+
 if __name__ == '__main__':
     app.run()
